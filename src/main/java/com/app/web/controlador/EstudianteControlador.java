@@ -19,3 +19,4 @@ public class EstudianteControlador {
 		return "estudiantes"; //nos retorna al archivo estudiantes
 	}
 }
+
