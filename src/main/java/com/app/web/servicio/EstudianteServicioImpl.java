@@ -11,7 +11,6 @@ import com.app.web.repositorio.EstudianteRepositorio;
 @Service
 public class EstudianteServicioImpl implements EstudianteServicio
 {
-
 	@Autowired
 	private EstudianteRepositorio repositorio;
 	
@@ -19,5 +18,25 @@ public class EstudianteServicioImpl implements EstudianteServicio
 	public List<Estudiante> listarTodosLosEstudiantes() {
 		// TODO Auto-generated method stub
 		return repositorio.findAll();
+	}
+	
+	@Override
+	public Estudiante guardarEstudiante(Estudiante estudiante) {
+		return repositorio.save(estudiante);
+	}
+
+	@Override
+	public Estudiante obtenerEstudiantePorId(Long id) {
+		return repositorio.findById(id).get();
+	}
+
+	@Override
+	public Estudiante actualizarEstudiante(Estudiante estudiante) {
+		return repositorio.save(estudiante);
+	}
+
+	@Override
+	public void eliminarEstudiante(Long id) {
+		repositorio.deleteById(id);
 	}
 }
